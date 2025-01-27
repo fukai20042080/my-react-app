@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const BASE_URL = 'https://railway.bulletinboard.techtrain.dev/';
 
@@ -31,6 +32,10 @@ const ThreadList = () => {
   return (
     <div>
       <h1>掲示板スレッド一覧</h1>
+            {/* スレッド新規作成画面に遷移するリンク */}
+            <Link to="/threads/new">
+        <button>新規スレッド作成</button>
+      </Link>
       <ul>
         {threads.map((thread) => (
           <li key={thread.id}>
